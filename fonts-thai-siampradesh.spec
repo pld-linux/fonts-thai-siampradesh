@@ -2,14 +2,16 @@ Summary:	Thai SiamPradesh scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne SiamPradesh
 Name:		fonts-thai-siampradesh
 Version:	0.2.2
-Release:	1
+Release:	2
 License:	Font Computer Program License (see COPYING)
 Group:		Fonts
 Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-siampradesh/thaifonts-siampradesh-%{version}.tar.gz
 # Source0-md5:	682791e7abc47f4dd35d2bb2e598b154
+Patch0:		fontconfig-2.10.patch
 URL:		http://linux.thai.net/projects/thaifonts-siampradesh
 BuildRequires:	fontforge >= 20080110
 BuildRequires:	xorg-app-mkfontscale
+Requires:	fontconfig >= 1:2.10.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,8 +66,12 @@ Ten pakiet zawiera fonty w formacie Type1.
 
 %prep
 %setup -q -n thaifonts-siampradesh-%{version}
+%patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-pfb \
 	--with-ttfdir=%{_fontsdir}/TTF \
@@ -109,8 +115,8 @@ fontpostinst Type1
 %{_fontsdir}/TTF/SPSinsamut*.ttf
 %{_fontsdir}/TTF/SPSutsakhorn*.ttf
 %{_fontsdir}/TTF/SPThotsakan*.ttf
-/etc/fonts/conf.avail/64-ttf-thai-siampradesh.conf
-/etc/fonts/conf.avail/89-ttf-thai-siampradesh-synthetic.conf
+%{_datadir}/fontconfig/conf.avail/64-ttf-thai-siampradesh.conf
+%{_datadir}/fontconfig/conf.avail/89-ttf-thai-siampradesh-synthetic.conf
 
 %files -n fonts-Type1-thai-siampradesh
 %defattr(644,root,root,755)

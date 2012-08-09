@@ -1,0 +1,11 @@
+--- thaifonts-siampradesh-0.2.2/fontconfig/Makefile.am~	2010-01-10 06:25:19.000000000 +0100
++++ thaifonts-siampradesh-0.2.2/fontconfig/Makefile.am	2012-08-09 11:42:56.818691207 +0200
+@@ -4,7 +4,7 @@
+ 
+ EXTRA_DIST = $(CONFIG_FILES)
+ 
+-fontconfigdir = $(sysconfdir)/fonts/conf.avail
++fontconfigdir = $(datadir)/fontconfig/conf.avail
+ 
+ fontconfig_DATA = $(CONFIG_FILES)
+ 
