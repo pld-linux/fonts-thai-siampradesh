@@ -2,7 +2,7 @@ Summary:	Thai SiamPradesh scalable fonts
 Summary(pl.UTF-8):	Tajskie fonty skalowalne SiamPradesh
 Name:		fonts-thai-siampradesh
 Version:	0.2.2
-Release:	2
+Release:	3
 License:	Font Computer Program License (see COPYING)
 Group:		Fonts
 Source0:	http://linux.thai.net/pub/thailinux/software/thaifonts-siampradesh/thaifonts-siampradesh-%{version}.tar.gz
