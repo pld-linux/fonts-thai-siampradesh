@@ -66,7 +66,7 @@ Ten pakiet zawiera fonty w formacie Type1.
 
 %prep
 %setup -q -n thaifonts-siampradesh-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal}
